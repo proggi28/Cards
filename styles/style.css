@@ -155,7 +155,7 @@ figure {
   left: -25px;
   width: 15px;
   height: 15px;
-  background-image: url('/images/marker-light.svg');
+  background-image: url('../images/marker-light.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -225,7 +225,7 @@ figure {
 }
 
 .theme_dark .header__theme-button_is-active::after {
-  background-image: url(/images/pattern.svg);
+  background-image: url(../images/pattern.svg);
 }
 
 .theme_dark .content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
@@ -236,9 +236,9 @@ figure {
 }
 
 .theme_dark .colored-text::after {
-  background-image: url(/images/pattern.svg);
+  background-image: url(../images/pattern.svg);
 }
 
 .theme_dark .content__list-item::before {
-  background-image: url(/images/marker-dark.svg);
+  background-image: url(../images/marker-dark.svg);
 }
