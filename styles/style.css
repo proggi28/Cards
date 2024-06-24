@@ -1,0 +1,244 @@
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  --main-font: Raleway;
+  --accent-font: 'STIX Two Text';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  min-inline-size: 360px;
+  font-size: 18px;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font, sans-serif);
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+.heading {
+  font-family: var(--accent-font, serif);
+  line-height: 90%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.content-section {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  padding-top: 10%;
+}
+
+.header__theme-toggler {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header__theme-button {
+  all: unset;
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+  position: relative;
+}
+
+.header__theme-button:hover {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 50%, transparent);
+}
+
+.header__theme-button:disabled {
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.header__theme-button:focus {
+  color: currentColor;
+  outline: 1px solid currentColor;
+  border-bottom: none;
+}
+
+.header__theme-button_is-active {
+  font-weight: 700;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 0.4em;
+  left: 0;
+  top: 12px;
+  z-index: -1;
+}
+
+.content__title {
+  font-size: 30px;
+  margin: 7% 0 2.5%; 
+}
+
+.content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
+  background-color: var(--accent-color);
+  display: inline-block;
+  padding: 0 4px;
+  margin-right: 1px;
+}
+
+.content__text-block:not(:last-child) .content__paragraph:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.content__paragraph-link {
+  color: currentColor;
+}
+
+.content__paragraph-link:hover {
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 50%, transparent);
+}
+
+.content__paragraph-link:focus {
+  border: 1px solid currentColor;
+}
+
+.content__blockquote {
+  width: 75%;
+  margin:0 auto 1.5em;
+  font-style: italic;
+  line-height: 200%;
+}
+
+.content__list {
+  list-style-type: none;
+  padding: 0 0 0 inline-start;
+  margin: 0;
+}
+
+.content__list-item {
+  position: relative;
+}
+
+.content__list-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  width: 15px;
+  height: 15px;
+  background-image: url('/images/marker-light.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.content__figure {
+  padding: 7% 0;
+  width: calc(100% + 10vw);
+  position: relative;
+  right: 5vw;
+}
+
+.content__picture {
+  width: 100%;
+}
+
+.content__picture-caption {
+  text-align: center;
+  border-bottom: 1px solid #312A4E;
+  padding: 20px 0;
+}
+
+.content__card {
+  aspect-ratio: 4/3;
+  margin-top: 7%;
+  border: 1px solid var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content__card-title {
+  font-size: 60px;
+}
+
+.colored-text {
+  position: relative;
+}
+
+.colored-text::after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 10px);
+  background-color: var(--accent-color);
+  height: 0.5ch;
+  left: -5px;
+  top: 35px;
+  z-index: -1;
+}
+
+.footer {
+  margin-top: 10%;
+  padding: 2.5%;
+  text-align: center;
+  border-top: 1px solid currentColor;
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(/images/pattern.svg);
+}
+
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
+  font-weight: 700;
+  font-size: 30px;
+  border: 1px solid currentColor;
+  margin-right: 5px;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(/images/pattern.svg);
+}
+
+.theme_dark .content__list-item::before {
+  background-image: url(/images/marker-dark.svg);
+}
